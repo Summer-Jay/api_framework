@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    jndi-name: jndi/portfolio
+    
+mybatis:
+  mapper-locations: classpath:mapper/sql/*.xml
+  config-location: classpath:mapper/mybatis/mybatis-config.xml
