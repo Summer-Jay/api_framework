@@ -6,14 +6,20 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.logging.Logger;
 import org.mybatis.logging.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.joohee.portfolio.common.utilTest;
 import com.joohee.portfolio.mapper.LoginMapper;
 import com.joohee.portfolio.service.LoginService;
+import com.uwoljh.comonLib.common.CommonUtil;
 
 @Service("loginService")
 public class LoginServiceImpl implements LoginService{
@@ -41,5 +47,21 @@ public class LoginServiceImpl implements LoginService{
 		}
 		return resultMap;
 	}
+
+	@Override
+	public Map<String, Object> saveMemberInfo(HttpServletRequest request) throws Exception {
+		Map<String, Object> resultMap = new HashMap<String,Object>();
+		
+		try {
+			String bodyStr = utilTest.getBody(request);	
+			Map<String, Object> bodymap = CommonUtil.strToObject(bodyStr);			
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return resultMap;
+	}
+
+	
 
 }
